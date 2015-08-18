@@ -3,13 +3,13 @@
  *		Variables & Mixins
  * ------------------------------
  */
-$green: 		#00bc9a;
-$light-green: 	#41c9af;
-$red:			#ea4b36;
-$white:			#ffffff;
-$light-grey:	#808080;
-$grey:			#4c4c4c;
-$dark-grey:		#404040;
+$green: #00bc9a;
+$light-green: #41c9af;
+$red: #ea4b36;
+$white: #ffffff;
+$light-grey: #808080;
+$grey: #4c4c4c;
+$dark-grey: #404040;
 
 @mixin round-border($n) {
 	-webkit-border-radius: $n;
