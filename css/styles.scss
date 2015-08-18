@@ -1,0 +1,254 @@
+/* 
+ * ------------------------------
+ *		Variables & Mixins
+ * ------------------------------
+ */
+$green: 				#00bc9a;
+$light-green: 	#41c9af;
+$red:						#ea4b36;
+$white:					#ffffff;
+$light-grey:		#808080;
+$grey:					#4c4c4c;
+$dark-grey:			#404040;
+
+@mixin round-border($n) {
+	-webkit-border-radius: $n;
+	-moz-border-radius: $n;
+	border-radius: $n;
+}
+
+
+/* 
+ * ------------------------------
+ *		Core styles
+ * ------------------------------
+ */
+* {
+	font-family: 'Roboto', sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+body, html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: url(../img/bg.png) no-repeat center center;
+	border-top: 16px solid $green;
+	max-width: 700px;
+	margin: 0 auto;
+}
+h1 {
+	color: $grey;
+	font-size: 26px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+h4 {
+	color: $light-grey;
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 400;
+	margin-top: 22px;
+}
+p {
+	color: $grey;
+	font-size: 11px;
+	line-height: 16px;
+	margin-bottom: 35px;
+}
+.green {
+	color: $green;
+}
+
+
+/* 
+ * ------------------------------
+ *		Form styles
+ * ------------------------------
+ */
+form {
+	max-width: 540px;
+	margin: 60px auto;
+	padding: 0 20px;
+	fieldset {
+		border: none;
+		clear: both;
+		padding: 0;
+		margin-bottom: 35px;
+		legend {
+			color: $dark-grey;
+			font-size: 14px;
+			font-weight: 500;
+			margin-bottom: 14px;
+		}
+		.input-group {
+			width: 100%;
+			margin-bottom: 10px;
+			overflow: auto;
+			position: relative;
+		}
+		label {
+			color: $light-grey;
+			display: block;
+			font-size: 11px;
+			margin-bottom: 5px;
+		}
+		input, 
+		textarea,
+		select {
+			background-color: $white;
+			border: 2px solid #e0e0e0;
+			color: $grey;
+			float: left;
+			font-size: 12px;
+			height: 30px;
+			outline: none;
+			padding: 8px;
+			width: 60%;
+			@include round-border(4px);
+			&.error {
+				/*border-right: 3px solid $red;*/
+			}
+			&:focus {
+				border: 2px solid $green;
+			}
+			@media screen and (max-width: 500px) {
+				width: 100%;
+			}
+		}
+		.error-msg {
+			background-color: $red;
+			color: $white;
+			float: right;
+			font-size: 10px;
+			left: 0;
+			margin: 0;
+	    height: 28px;
+	    padding: 6px 0 6px 8px;
+	    position: absolute;
+	    width: 37%;
+	    -webkit-animation: slide 0.5s forwards;
+	    animation: slide 0.5s forwards;
+	    z-index: -1;
+			&::before {
+				content: '';
+				background: transparent url(../img/red-arrow.png) no-repeat center right;
+		    height: 28px;
+		    width: 10px;
+		    position: absolute;
+		    left: -9px;
+		    top: 0;
+			}
+			@media screen and (max-width: 500px) {
+				background-color: $white;
+				color: $red;
+				left: auto;
+				right: 0;
+				top: 0;
+				padding-top: 2px;
+				width: auto;
+				-webkit-animation: none;
+	    	animation: none;
+				&::before {
+					display: none;
+				}
+			}
+		}
+		textarea {
+			height: 100px;
+			resize: none;
+			width: 100%;
+		}
+		select {
+			display: block;
+			outline: none;
+			padding: 0 8px;
+			width: 60%;
+			@media screen and (max-width: 500px) {
+				width: 100%
+			}
+		}
+		input[type="checkbox"],
+		input[type="radio"] {
+			display: none;
+			width: auto;
+		}
+		input[type="checkbox"] + label,
+		input[type="radio"] + label, {
+			color: $light-grey;
+			display: inline-block;
+			font-size: 12px;
+			margin-right: 15px;
+		}
+		input[type="checkbox"] + label:before,
+		input[type="radio"] + label:before, {
+	    content: '';
+	    display:inline-block;
+	    width:31px;
+	    height:31px;
+	    margin:-1px 8px 0 0;
+	    vertical-align:middle;
+	    background:url(../img/checkbox.png) left top no-repeat;
+	    cursor:pointer;
+	    -webkit-transition: none;
+			-moz-transition: none;
+			-o-transition: none;
+			transition: none;
+		}
+		input[type="checkbox"] + label:hover,
+		input[type="radio"] + label:hover {
+			cursor: pointer;
+			&:before{
+		    content: '';
+		    cursor: pointer;
+		    background:url(../img/checkbox.png) -31px top no-repeat;
+			}
+		}
+		input[type="checkbox"]:checked + label:before,
+		input[type="radio"]:checked + label:before {
+			content: '';
+	    background:url(../img/checkbox.png) -62px top no-repeat;
+		}
+		input[type="checkbox"]:checked + label,
+		input[type="radio"]:checked + label {
+			color: $grey;
+		}
+	}
+	button {
+		content: '';
+		color: transparent;
+		background: $green url(../img/submit-sprite.png) no-repeat center -30px;
+		border: none;
+		font-size: 12px;
+		font-weight: 500;
+		height: 30px;
+		margin: 30px 0 10px 40%;
+		padding: 0 26px;
+		text-transform: uppercase;
+		@include round-border(4px);
+		&:hover, &:focus {
+			background: $light-green url(../img/submit-sprite.png) no-repeat center top;
+			cursor: pointer;
+			outline: none;
+		}
+	}
+}
+
+
+/* 
+ * ------------------------------
+ *		Animations
+ * ------------------------------
+ */
+@-webkit-keyframes slide {
+    100% { left: 63%; }
+}
+@keyframes slide {
+    100% { left: 63%; }
+}

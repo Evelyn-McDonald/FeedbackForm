@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by anonymous (http://jsbin.com/mojetejite/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <!-- Added by Evelyn -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <!-- End added by Evelyn -->
+</head>
+<body>
+  <span class="top"></span>
+  <form id="feedbackForm" action="#" method="post">
+
+      <!-- Added by Evelyn -->
+      <h1>We want your feedback!</h1>
+      <p>Proin tempor est elit, eget efficitur nibh facilisis sed. <span class="green">Nulla vestibulum</span> interdum est ac imperdiet. Curabitur facilisis a ipsum rhoncus ultricies. Aenean convallis.</p>
+      <!-- End added by Evelyn -->
+
+      <fieldset>
+        <legend>Personal details</legend>
+        
+        <div class="input-group">
+          <label for="name">Your name:</label>
+          <input type="text" name="name" id="name" class="required">  
+        </div>
+        
+        <div class="input-group">
+          <label for="email">Your email address:</label>
+          <input type="email" id="email" name="email" class="required">
+        </div>
+        
+        <div class="input-group">
+          <label for="phoneNumber">Your telephone number:</label>
+          <input type="text" name="phoneNumber" id="phoneNumber" class="required">
+        </div>
+        
+        <label for="select-choice">Where are you from?</label>
+        <select name="select-choice" id="select-choice">
+          <option value="england">England</option>
+          <option value="spain">Spain</option>
+          <option value="france">France</option>
+          <option value="netherlands">Netherlands</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+         <legend>Which is better?</legend>
+
+         <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1">
+         <label for="radio-choice-1">Mercedes</label>
+
+         <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2">
+         <label for="radio-choice-2">Audi</label>
+      </fieldset>
+
+    <fieldset>
+      <legend>Feedback</legend>
+      <div class="">
+          <label for="textarea">Enter your feedback:</label>
+          <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+      </div>
+      <h4>How does our product make you feel?</h4>
+      <div>
+        <input type="checkbox" name="checkbox1" id="checkbox1" />
+        <label for="checkbox1">Amazing</label>
+        <input type="checkbox" name="checkbox2" id="checkbox2" />
+        <label for="checkbox2">Happy</label>
+        <input type="checkbox" name="checkbox3" id="checkbox3" />
+        <label for="checkbox3">Sad</label>
+      </div>
+      
+    </fieldset>
+    <button>Submit</button>
+  </form>
+
+  <!-- Added by Evelyn -->
+  <script src="js/script.js"></script>
+  <!-- End added by Evelyn -->
+</body>
+</html>
