@@ -109,7 +109,7 @@ form {
 			font-size: 12px;
 			height: 30px;
 			outline: none;
-			padding: 8px;
+			padding-left: 8px;
 			width: 60%;
 			@include round-border(4px);
 			&:focus {
@@ -159,6 +159,7 @@ form {
 		}
 		textarea {
 			height: 100px;
+      padding-top: 8px;
 			resize: none;
 			width: 100%;
 		}
